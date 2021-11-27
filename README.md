@@ -41,4 +41,5 @@ The **ddl.sql** file also initialises a few sample accounts for testing. You can
 - Add actual course management features
 - Group files of similar types in different folders for organised sense of heirarchy
 - A more encapsulated way of implementing views
+- Store some photos locally as links have expired
 
