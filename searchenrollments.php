@@ -110,17 +110,20 @@ include('config/config.php');
 			        <input type = "text" name="search" id="search" placeholder = "Search by ID"/>
                     <button type="submit" class="button" name="submit">Search Enrollments</button>
                 </form>
-                <?php
-				    $search = isset($_POST['search']) ? $_POST['search'] : '';
+                <?php                
+                    if(isset($_POST["submit"])){
+                        $search = isset($_POST['submit']) ? $_POST['submit'] : '';
 
-				    $sql="SELECT studentID, fullName FROM studentcourse JOIN enduser ON studentcourse.studentID = enduser.userID WHERE courseID = $search";
-				    $result = $mysqli->query($sql);
+                        $sql="SELECT studentID, fullName FROM studentcourse JOIN enduser ON studentcourse.studentID = enduser.userID WHERE courseID = $search";
+                        $result = $mysqli->query($sql);
 
-				
-				    while ($row=$result->fetch_assoc()) {
-                        echo '<span class="result" style="font-size:large; margin-left:10px;">Student Name: ' . $row['studentID'] . "</span><br>";
-					    echo '<span class="result" style="font-size:large; margin-left:10px;">Student Name: ' . $row['fullName'] . "</span><br><br>";
-				    }
+                    
+                        while ($row=$result->fetch_assoc()) {
+                            echo '<span class="result" style="font-size:large; margin-left:10px;">Student Name: ' . $row['studentID'] . "</span><br>";
+                            echo '<span class="result" style="font-size:large; margin-left:10px;">Student Name: ' . $row['fullName'] . "</span><br><br>";
+                        }
+
+                    }				    
 			    ?>
             </div>
     </body>

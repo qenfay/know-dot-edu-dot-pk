@@ -1,12 +1,6 @@
 <?php
     session_start();
 
-    if(!(isset($_SESSION["favcolor"]) && ($_SESSION["favcolor"] == "green"))){
-        echo "<font color='red'>Session is either NOT set or favcolor is not green.<br/>";
-        echo '<a href="setsession.php">Click here</a> to set session. </font>';
-        return;
-    }
-
     include_once("./config/config.php");
 
     $result = mysqli_query($mysqli, "SELECT * FROM enduser");
