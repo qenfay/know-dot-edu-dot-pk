@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <html>
 <head> <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
 <title>Know | Courses</title>
@@ -32,7 +35,31 @@
 </div>
 
 <div class = "main" style="height: auto;"> 
-	
+<?php 
+	include_once("./config/config.php");
+    $result = mysqli_query($mysqli, "SELECT * FROM course");
+	// echo '<table class="course-table">';
+	// while($res = mysqli_fetch_array($result)) {
+	// 	echo '<tr>';
+	// 	echo "<td>".$res['title']."</td>";
+	// 	echo "<td>".$res['field']."</td>";
+	// 	echo "<td><button>Enroll</button></td>";
+	// 	echo '<td><input type="hidden" value='.$res['courseID'].'></td>';
+	// 	echo "</tr>";
+	// }
+	// echo "</table>"; 
+
+	echo '<table class="course-table">';
+	while($res = mysqli_fetch_array($result)) {
+		echo '<tr>';
+		echo "<td>".$res['title']."</td>";
+		echo "<td>".$res['field']."</td>";
+		echo "<td><a href=\"coursepage.php#!/".$res['courseID']."\"><button>View course</button></a></td>";
+		echo "</tr>";
+	}
+	echo "</table>"; 
+
+?>
 </div>
 
 <hr>

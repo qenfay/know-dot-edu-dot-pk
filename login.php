@@ -89,9 +89,11 @@ function validate() {
 		<?php 
 			/* change navbar based on whether you are logged in or not */
 			if (isset($_SESSION['userName'])) {
-				echo '<a href = "internals/logout.inc.php"> <li> Logout </li> </a>';
+				echo '<a href = "viewcourses.php"> <li> Courses </li> </a>
+				<a href = "internals/logout.inc.php"> <li> Logout </li> </a>';
 			} else {
 				echo '
+					<a href = "viewcourses.php"> <li> Courses </li> </a>
 					<a href = "about.html"> <li> About </li> </a>
 					<a href = "pricing.html"> <li> Pricing </li> </a>
 				';

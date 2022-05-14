@@ -344,6 +344,27 @@ span:hover + .appear {
 	.text {font-size: 11px}
 }
 
+/* cards for displaying courses*/
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    grid-gap: 20px;
+	background-color: #ffffff;
+}
+
+.card {
+    display: grid;
+    grid-template-rows: max-content 200px 1fr;
+	background-color: #ffffff;
+}
+
+.card img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+
 /* course card */
 
 .course-card {
@@ -411,5 +432,24 @@ span:hover + .appear {
 
 }
 
-  
-  
+.course-table{
+	width: 80%;
+	margin: auto;
+	border-collapse: collapse;
+	border: 2px solid #d70eed;
+}
+
+.title {
+	font-size: 70px;
+	letter-spacing: 0px;
+	word-spacing: 0.4px;
+	color: #603E94;
+	font-weight: bold;
+	text-decoration: underline solid rgb(93, 159, 64);
+	font-style: normal;
+	font-variant: small-caps;
+	text-transform: capitalize;
+	background-color: rgba(250, 195, 42, 0.9);
+	text-align: center;
+	}
+	

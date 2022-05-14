@@ -108,12 +108,13 @@ button:hover {
 		<?php 
 			/* change navbar based on whether you are logged in or not */
 			if (isset($_SESSION['userName'])) {
-				echo '<a href = "internals/logout.inc.php"> <li> Logout </li> </a>';
+				echo '<a href = "viewcourses.php"> <li id ="active"> Courses </li> </a>
+				<a href = "internals/logout.inc.php"> <li> Logout </li> </a>';
+				
 			} else {
-				echo '
+				echo '<a href = "viewcourses.php"> <li id ="active"> Courses </li> </a>
 					<a href = "about.html"> <li> About </li> </a>
-					<a href = "pricing.html"> <li> Pricing </li> </a>
-				';
+					<a href = "pricing.html"> <li> Pricing </li> </a>';
 			}
 		?>
 	</ul>
