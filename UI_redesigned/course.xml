@@ -1,0 +1,9 @@
+<?xml version = "1.0"?>
+<!DOCTYPE course SYSTEM "course.dtd">
+
+<degree>
+<course> 
+<teacher>Talaal Bajwa</teacher>
+<title>Introduction to Quantum Computing</title>
+</course>
+<degree>

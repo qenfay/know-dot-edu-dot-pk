@@ -1,0 +1,5 @@
+<!ELEMENT account (name, username, password)>
+<!ATTLIST account type (teacher | student) #REQUIRED>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT username (#PCDATA)>
+<!ELEMENT password (#PCDATA)>
