@@ -15,7 +15,7 @@ session_start();
 	<a id = "logo" href = "landing/index.php"><img src = "logo.png"></a>
 	<ul class = "navbar">
 	<a href = "landing/index.php" > <li> Home </li> </a>
-	<a href = "viewcourses.php"> <li id = "active"> Courses </li> </a>	
+	<a href = "viewcourses/index.php"> <li id = "active"> Courses </li> </a>	
 	<!-- LOGGED IN -->
 	<?php if (isset($_SESSION['userName'])) : ?>
 	
@@ -34,10 +34,73 @@ session_start();
 	</form>
 </div>
 
-<div class = "main" style="height: auto;"> 
+<div class="main" style="min-height:400px"> 
+
 <?php 
 	include_once("./config/config.php");
-    $result = mysqli_query($mysqli, "SELECT * FROM course");
+	$query = "SELECT course.courseID, course.title, course.field, coursecontent.contentType, coursecontent.filePath FROM course JOIN coursecontent USING (courseID)";
+
+	$result = mysqli_query($mysqli, $query);
+
+	$course_ids = array();
+	$course_images = array();
+	$course_descriptions = array();
+	$course_fields = array();
+	$course_titles = array();
+
+	if ($result){
+		// Fetch each row and store in respective array
+		while($res = mysqli_fetch_array($result)){
+			if (in_array($res['courseID'], $course_ids) == false){
+				array_push($course_ids, $res['courseID']);
+				array_push($course_fields, $res['field']);
+				array_push($course_titles, $res['title']);
+			}
+
+
+			if ($res['contentType'] == 'Photo'){
+				array_push($course_images, $res['filePath']);
+			}
+			else{
+				array_push($course_descriptions, file_get_contents($res['filePath']));
+			}						
+		}
+		
+		// Add course cards based on the number of courses
+		for ($i = 0; $i < count($course_ids); $i++){
+			$margin = "";
+
+			// Checks to distribute space
+
+			// Second card of row, should have top margin of 2%, right and left margins of 6.25%
+			if ((($i + 2) % 3) == 0){
+				$margin = "margin-top:2%;margin-left:6.25%;margin-right:6.25%";
+			}
+
+			// Last card of row, should have top margin of 2% only
+			else if((($i + 1) % 3) == 0){
+				$margin = "margin-top:2%;";
+			}
+
+			// First card of row, should have top margin of 2% and left margin of 6.25%
+			else{
+				$margin = "margin-left:6.25%;margin-top:2%;";
+			}
+
+			echo 
+			'<div class="col-3" style="border-radius: 3%;height:400px;background-color:rgba(128, 0, 128, 0.8);border:1px solid #000;'.$margin.'">
+				<img style="border-radius: 3%;height:200px;width:100%" src='.$course_images[$i].'>
+				<br>
+				<h3 style="color:#fff">'.$course_titles[$i].'</h3>
+				<h5 style="color:#fff">'.$course_descriptions[$i].'</h5>
+			</div>';
+
+			
+
+		}
+
+		// var_dump($course_descriptions[0]);
+	}
 	// echo '<table class="course-table">';
 	// while($res = mysqli_fetch_array($result)) {
 	// 	echo '<tr>';
@@ -49,15 +112,8 @@ session_start();
 	// }
 	// echo "</table>"; 
 
-	echo '<table class="course-table">';
-	while($res = mysqli_fetch_array($result)) {
-		echo '<tr>';
-		echo "<td>".$res['title']."</td>";
-		echo "<td>".$res['field']."</td>";
-		echo "<td><a href=\"coursepage.php#!/".$res['courseID']."\"><button>View course</button></a></td>";
-		echo "</tr>";
-	}
-	echo "</table>"; 
+
+
 
 ?>
 </div>
