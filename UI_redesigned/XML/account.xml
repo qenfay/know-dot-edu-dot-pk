@@ -1,0 +1,15 @@
+<?xml version = "1.0"?>
+<!DOCTYPE account SYSTEM "account.dtd">
+<account type = "learner">
+	<name>John Wick</name>
+	<username>johnwitch90</username>
+	<password>password</password>
+</account>
+
+<account type = "teacher">
+	<name>Talaal Bajwa</name>
+	<username>tb.bscs18seecs</username>
+	<password>nust123</password>
+</account>
+
+

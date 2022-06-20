@@ -1,0 +1,4 @@
+<!ELEMENT degree (course*)>
+<!ELEMENT course (teacher, title)>
+<!ELEMENT teacher #CDATA>
+<!ELEMENT title #CDATA>

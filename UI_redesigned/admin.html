@@ -1,0 +1,114 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Know | Admin Panel</title>
+
+        <style>
+            body {
+                font-family: "Lato", sans-serif;
+            }
+
+            .header {
+                color: white;
+                background-color: darkslategray;
+                text-align: center;
+                margin-left: auto;
+                margin-top: 10px;
+                margin-bottom: 10px;
+                padding: 20px;
+            }
+
+            .sidenav {
+                height: 100%;
+                width: 250px; 
+                position: fixed; 
+                z-index: 1; 
+                top: 10px; 
+                left: auto;
+                background-color: darkslategray; 
+                overflow-x: hidden; 
+                padding-top: 20px;
+            }
+
+            .sidenav a {
+                padding: 6px 8px 6px 16px;
+                text-decoration: none;
+                font-size: 25px;
+                color: white;
+                display: block;
+            }
+
+            .sidenav a:hover {
+                text-decoration: underline;
+            }
+
+            .main {
+                margin-left: 250px;
+                padding: 0px 10px;
+            }
+
+            .centre {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                width: 50%;
+            }
+
+            p {
+                font-size: large;
+            }
+
+            .button {
+	            background-color: darkslategray; 
+	            border: none;
+	            color: white;
+	            padding: 15px 40px;
+	            text-align: center;
+	            text-decoration: none;
+	            display: inline-block;
+                font-size: 20px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            button:hover {
+                opacity: 80%;
+	            transition: 500ms;
+            }
+
+            #active {
+                text-decoration: underline;
+            }
+        </style>
+    </head>
+
+    <body>
+        <h1 class="header"><u>Admin View</u></h1>
+        <div class="sidenav">
+            <a href="admin.html" id="active">Home</a>
+            <a href="viewteachers.php">See Teachers</a>
+            <a href="viewUsers.php">Delete Users</a>
+            <a href="searchenrollments.php">Search Enrollments</a>
+            <a href="addcourse.html">Add a course</a>
+            <a href="internals/logout.inc.php">Log Out</a>
+        </div>
+
+        <div class="main">
+            <h2><u>About</u></h2>
+            <p>
+                Welcome to the Know.edu Admin Panel! Here, you will be able to make changes to the website, and view analytics and statistics. To get started, 
+                click on any of the options on the sidebar to the left. You are currently able to <b>view teachers</b>, <b>delete/ban users for misconduct</b>, <b>Search enrollments</b>, 
+                <b>edit courses</b> and <b>view analytics</b>.
+            </p>
+            <a href="home.html"><img src="logo.png" class="centre"></a>
+            <p>
+                Clicking the above image will guide you to the main website. Remember to be very <u style="color: red;"><b>careful</b></u> when using the admin panel, as changes made will affect
+                the whole website, and irresponsible or accidental usage could result in serious data loss. In case of such a scenario, contact an administrator of higher authority, 
+                who has access to the restore data function. Click the button below to view database.
+            </p>
+            <form action="database.php" target="_blank" style="text-align: center;">
+                <button type="submit" class="button">Database</button>
+            </form>
+        </div>
+    </body>
+</html>

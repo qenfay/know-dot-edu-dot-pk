@@ -1,0 +1,1 @@
+Logic gates are great. In fact, they are amazing. Logic gates are the next step that converts 1s and 0s into actual computation, so brace up, for this course will blow your mind as you realise how little bits of circuitry form complex computational programs. 

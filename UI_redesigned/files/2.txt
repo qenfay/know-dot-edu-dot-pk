@@ -1,0 +1,1 @@
+Calculus II builds up on the knowledge of the preceding course in this series. You will learn derivation and integration as you did before, but this time, it will be multivariate! This will allow you to gain the needed math for backpropagation in an A.I course.

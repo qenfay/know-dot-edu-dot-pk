@@ -1,0 +1,1 @@
+Proofs and logic. It is the foundation of computational mathematics, and a course you will take with you far ahead in life, assuming you life involves computing theory. Live like Alan Turing did, because discrete math is at its core. 

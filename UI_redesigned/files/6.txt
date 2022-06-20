@@ -1,0 +1,1 @@
+You cannot be great at computer hardware without programming it at just one step above 1s and 0s...and that is assembly. Using MASM and RISC V distributions, you will learn how to program powerful computer hardware from the bottom up.
