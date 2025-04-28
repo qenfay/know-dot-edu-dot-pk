@@ -33,8 +33,8 @@ The **ddl.sql** file also initialises a few sample accounts for testing. You can
 
 ## Authors
 
-- Muhammad Shaafay Saqib (me!) [@qenfay](https://github.com/qenfay/))
-- Talaal Yousaf Bajwa
+- Muhammad Shaafay Saqib (me!) [@qenfay](https://github.com/qenfay/)
+- Talaal Yousaf Bajwa [@tbajwa06fin](https://github.com/tbajwa06fin)
 
 ## Room for Improvement
 - Design could be greatly improved to be more modern and less simplistic
